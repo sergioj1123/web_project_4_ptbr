@@ -1,0 +1,9 @@
+.photos__item {
+  max-width: 282px;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  background-color: #ffffff;
+}

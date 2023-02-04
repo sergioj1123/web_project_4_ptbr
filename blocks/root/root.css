@@ -1,0 +1,11 @@
+.page {
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.text {
+  font-family: "Inter";
+  font-style: normal;
+  color: #ffffff;
+  margin: 0;
+}

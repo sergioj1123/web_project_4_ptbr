@@ -2,3 +2,29 @@
 @import url(../vendor/normalize.css);
 @import url(../fonts/font.css);
 @import url(../blocks/root/root.css);
+
+/* importando header */
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+/* Importando profile */
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__image/profile__image.css);
+@import url(../blocks/profile/__main/profile__main.css);
+@import url(../blocks/profile/__name/profile__name.css);
+@import url(../blocks/profile/__edit/profile__edit.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__add/profile__add.css);
+@import url(../blocks/profile/__profession/profile__profession.css);
+
+/* importando photo */
+@import url(../blocks/photos/photos.css);
+@import url(../blocks/photos/__item/photos__item.css);
+@import url(../blocks/photos/__info/photo__info.css);
+@import url(../blocks/photos/__name/photo__name.css);
+@import url(../blocks/photos/__likeButton/photo__likeButton.css);
+@import url(../blocks/photos/__img/photo__img.css);
+
+/* importando footer */
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copy/footer__copy.css);

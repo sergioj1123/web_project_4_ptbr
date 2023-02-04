@@ -6,3 +6,8 @@
   border: 1px solid #ffffff;
   background-color: #000000;
 }
+
+.profile__edit:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}

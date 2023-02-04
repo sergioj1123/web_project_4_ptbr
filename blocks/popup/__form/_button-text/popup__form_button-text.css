@@ -1,0 +1,14 @@
+.popup__form_button-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__form_button-text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

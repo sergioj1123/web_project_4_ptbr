@@ -19,6 +19,35 @@
         />
       </header>
       <main class="content">
+        <section class="popup">
+          <div class="popup__container">
+            <h2 class="popup__title text">Editar perfil</h2>
+            <button type="button" class="popup__close">
+              <img
+                src="./images/Close_Icon.png"
+                alt="imagem de fechar"
+                class="popup__close_item-img"
+              />
+            </button>
+            <form class="popup__form" name="edit">
+              <input
+                type="text"
+                name="edit-name"
+                placeholder="nome-editavel"
+                class="popup__form_text text"
+              />
+              <input
+                type="text"
+                name="edit-ocupation"
+                placeholder="ocupation-editavel"
+                class="popup__form_text text"
+              />
+              <button type="submit" class="popup__form_button">
+                <span class="popup__form_button-text text">Salvar</span>
+              </button>
+            </form>
+          </div>
+        </section>
         <section class="profile">
           <img
             src="./images/profile.jpg"

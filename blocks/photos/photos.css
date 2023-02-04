@@ -9,3 +9,10 @@
   padding-top: 50px;
   padding-bottom: 67px;
 }
+
+@media screen and (max-width: 600px) {
+  .photos {
+    padding-top: 36px;
+    padding-bottom: 50px;
+  }
+}

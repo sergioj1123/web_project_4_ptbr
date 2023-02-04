@@ -7,6 +7,11 @@
   margin-left: 133px;
 }
 
+.profile__add:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 900px) {
   .profile__add {
     margin-left: 0;
@@ -16,6 +21,6 @@
 @media screen and (max-width: 600px) {
   .profile__add {
     max-width: 282px;
-    margin-top: 6px;
+    margin-top: 10px;
   }
 }

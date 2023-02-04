@@ -1,6 +1,7 @@
 .page {
   background-color: #000000;
   overflow: hidden;
+  position: relative;
 }
 
 .text {

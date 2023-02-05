@@ -6,6 +6,7 @@
 * Figma
 * GitHub Pages
 
+**Introdução**
 
 Este projeto foi desenvolvido como trabalho 4 do bootcamp da Practicum. Este é um projeto que desenvolvido utilizando HTML, CSS e JavaScript, sendo um perfil de uma rede de fotos, mostrando algumas imagens e uma função de editar o perfil.
 

@@ -1,4 +1,7 @@
 .photo__name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   color: #000000;
   font-weight: 900;
   font-size: 24px;

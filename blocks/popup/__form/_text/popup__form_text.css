@@ -1,6 +1,8 @@
 .popup__form_text {
   font-weight: 400;
   font-size: 14px;
+  max-height: 27px;
+  height: 100%;
   width: 100%;
   line-height: 17px;
   margin-bottom: 29px;
@@ -8,9 +10,5 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-weight: 400;
   font-size: 14px;
-}
-
-/* Alterando a cor do placeholder  */
-.popup__form_text::placeholder {
   color: #000000;
 }

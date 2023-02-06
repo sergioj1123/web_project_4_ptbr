@@ -8,6 +8,7 @@
   padding: 50px 10px 67px 10px;
   padding-top: 50px;
   padding-bottom: 67px;
+  list-style: none;
 }
 
 @media screen and (max-width: 600px) {

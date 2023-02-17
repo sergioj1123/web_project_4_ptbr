@@ -1,6 +1,6 @@
 // Importando elementos da tela de popup
 const openPopupButton = document.querySelector(".profile__edit");
-const popupScreen = document.querySelector(".popup");
+const popupScreen = document.querySelector(".popup__edit");
 const popupCloseButton = popupScreen.querySelector(".popup__close");
 const popupSaveButton = popupScreen.querySelector(".popup__form_button");
 const popupName = popupScreen.querySelector(".popup__form_text_name");
@@ -29,7 +29,7 @@ function saveButton(evt) {
   profileName.textContent = popupName.value;
   profileProfession.textContent = popupProfession.value;
   //   Também chamei a função de fechar a tela para que já feche quando clicar no salvar.
-  toogleForm();
+  popupScreen.classList.remove("popup_visible");
 }
 
 openPopupButton.addEventListener("click", toogleForm);

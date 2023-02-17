@@ -19,7 +19,7 @@
         />
       </header>
       <main class="content">
-        <section class="popup">
+        <section class="popup popup__edit">
           <div class="popup__container">
             <h2 class="popup__title text">Editar perfil</h2>
             <button type="button" class="popup__close">
@@ -44,6 +44,35 @@
               />
               <button type="submit" class="popup__form_button">
                 <span class="popup__form_button-text text">Salvar</span>
+              </button>
+            </form>
+          </div>
+        </section>
+        <section class="popup popup__newPlace">
+          <div class="popup__container">
+            <h2 class="popup__title text">Novo Local</h2>
+            <button type="button" class="popup__close">
+              <img
+                src="./images/Close_Icon.png"
+                alt="imagem de fechar"
+                class="popup__close_item-img"
+              />
+            </button>
+            <form class="popup__form" name="edit">
+              <input
+                type="text"
+                name="edit-name"
+                placeholder="Título"
+                class="popup__form_text popup__form_text_title text"
+              />
+              <input
+                type="text"
+                name="edit-ocupation"
+                placeholder="Link de imagem"
+                class="popup__form_text popup__form_text_link text"
+              />
+              <button type="button" class="popup__form_button">
+                <span class="popup__form_button-text text">Criar</span>
               </button>
             </form>
           </div>
@@ -184,8 +213,29 @@
         <p class="footer__copy text">&copy; 2023. Sérgio Félix Júnior</p>
       </footer>
     </div>
+    <template id="photos">
+      <li class="photos__item">
+        <img
+          src="./images/photo1.jpg"
+          alt="Uma bela iamgem de um rio na correndo na floresta"
+          class="photo__img"
+        />
+        <div class="photo__info">
+          <h3 class="photo__name text">Vale de Yosemite</h3>
+          <button type="button" class="photo__likeButton">
+            <img
+              src="./images/like_button.svg"
+              alt="Imagem do like"
+              class="photo__likeButton_item"
+            />
+          </button>
+        </div>
+      </li>
+    </template>
+
     <!-- importando meus scripts -->
     <script src="./scripts/popup.js"></script>
     <script src="./scripts/likedButton.js"></script>
+    <script src="./scripts/popupNewLocal.js"></script>
   </body>
 </html>

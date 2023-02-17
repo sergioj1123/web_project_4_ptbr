@@ -58,20 +58,22 @@
                 class="popup__close_item-img"
               />
             </button>
-            <form class="popup__form" name="edit">
+            <form class="popup__form popup__formAdd" name="edit">
               <input
                 type="text"
                 name="edit-name"
                 placeholder="Título"
+                required
                 class="popup__form_text popup__form_text_title text"
               />
               <input
                 type="text"
                 name="edit-ocupation"
+                required
                 placeholder="Link de imagem"
                 class="popup__form_text popup__form_text_link text"
               />
-              <button type="button" class="popup__form_button">
+              <button type="submit" class="popup__form_button">
                 <span class="popup__form_button-text text">Criar</span>
               </button>
             </form>
@@ -95,7 +97,7 @@
             </div>
             <h3 class="profile__profession text">Explorar</h3>
           </div>
-          <button class="profile__add" type="button">
+          <button class="profile__add" type="submit">
             <img
               src="./images/add_button.png"
               alt="botão com simbolo de adicionar"
@@ -105,11 +107,19 @@
         <section class="section__photos">
           <ul class="photos">
             <li class="photos__item">
-              <img
-                src="./images/photo1.jpg"
-                alt="Uma bela iamgem de um rio na correndo na floresta"
-                class="photo__img"
-              />
+              <div class="photo__container">
+                <img
+                  src="./images/photo1.jpg"
+                  alt="Uma bela iamgem de um rio na correndo na floresta"
+                  class="photo__img"
+                />
+                <button type="button" class="photo__deleteButoon">
+                  <img
+                    src="./images/deleteButton.svg"
+                    alt="simbolo da lixeira"
+                  />
+                </button>
+              </div>
               <div class="photo__info">
                 <h3 class="photo__name text">Vale de Yosemite</h3>
                 <button type="button" class="photo__likeButton">
@@ -215,11 +225,16 @@
     </div>
     <template id="photos">
       <li class="photos__item">
-        <img
-          src="./images/photo1.jpg"
-          alt="Uma bela iamgem de um rio na correndo na floresta"
-          class="photo__img"
-        />
+        <div class="photo__container">
+          <img
+            src="./images/photo1.jpg"
+            alt="Uma bela iamgem de um rio na correndo na floresta"
+            class="photo__img"
+          />
+          <button type="button" class="photo__deleteButoon">
+            <img src="./images/deleteButton.svg" alt="simbolo da lixeira" />
+          </button>
+        </div>
         <div class="photo__info">
           <h3 class="photo__name text">Vale de Yosemite</h3>
           <button type="button" class="photo__likeButton">
@@ -235,7 +250,7 @@
 
     <!-- importando meus scripts -->
     <script src="./scripts/popup.js"></script>
-    <script src="./scripts/likedButton.js"></script>
     <script src="./scripts/popupNewLocal.js"></script>
+    <script src="./scripts/inicialImages.js"></script>
   </body>
 </html>

@@ -6,6 +6,7 @@ const popupSaveButtonImage = popupImage.querySelector(".popup__form_button");
 const titleImage = document.querySelector(".popup__form_text_title");
 const linkImage = document.querySelector(".popup__form_text_link");
 const photos = document.querySelector(".photos");
+const popupForm = popupImage.querySelector(".popup__formAdd");
 
 // Função para deixar a tela visivel
 function toogleForm() {
@@ -13,29 +14,43 @@ function toogleForm() {
 }
 
 // Função para add novo cartão
-function saveButton() {
+function addNewCard(link, title) {
   const imageTemplate = document.querySelector("#photos").content;
   const imageElement = imageTemplate
     .querySelector(".photos__item")
     .cloneNode(true);
-  imageElement.querySelector(".photo__img").src = linkImage.value;
-  imageElement.querySelector(".photo__img").alt = titleImage.value;
-  imageElement.querySelector(".photo__name").content = titleImage.value;
+  imageElement.querySelector(".photo__img").src = link;
+  imageElement.querySelector(".photo__img").alt = title;
+  imageElement.querySelector(".photo__name").content = title;
   photos.prepend(imageElement);
-  toogleForm();
 
   // Adicionando o novo elemento dentro do items
-  items = document.querySelectorAll(".photo__likeButton_item");
-  items[0].addEventListener("click", function () {
-    // adicionando a função de alterar o botão de like apenas para o primeiro elemento do items, pois o restante já possui
-    if (event.target.src.includes("_black.svg")) {
-      event.target.src = "./images/like_button.svg";
-    } else {
-      event.target.src = "./images/like_button_black.svg";
-    }
-  });
+  imageElement
+    .querySelector(".photo__likeButton_item")
+    .addEventListener("click", function (event) {
+      // adicionando a função de like para o novo card
+      if (event.target.src.includes("_black.svg")) {
+        event.target.src = "./images/like_button.svg";
+      } else {
+        event.target.src = "./images/like_button_black.svg";
+      }
+    });
+
+  // Adicionando a função de delete para o novo item;
+  imageElement
+    .querySelector(".photo__deleteButoon")
+    .addEventListener("click", function () {
+      imageElement.remove();
+    });
 }
 
-popupSaveButtonImage.addEventListener("click", saveButton);
+// Função que chama addcard, quando cluca no botão de salvar.
+function saveButton(event) {
+  event.preventDefault();
+  addNewCard(linkImage.value, titleImage.value);
+  toogleForm();
+}
+
+popupForm.addEventListener("submit", saveButton);
 openButtonImage.addEventListener("click", toogleForm);
 popupCloseButtonImage.addEventListener("click", toogleForm);

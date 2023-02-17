@@ -1,5 +1,5 @@
-.photo__img {
-  border-radius: 10px 10px 0px 0px;
+.photo__container {
+  position: relative;
   max-width: 282px;
   max-height: 282px;
   width: 100%;

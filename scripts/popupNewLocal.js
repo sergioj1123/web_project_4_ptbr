@@ -21,7 +21,7 @@ function addNewCard(link, title) {
     .cloneNode(true);
   imageElement.querySelector(".photo__img").src = link;
   imageElement.querySelector(".photo__img").alt = title;
-  imageElement.querySelector(".photo__name").content = title;
+  imageElement.querySelector(".photo__name").textContent = title;
   photos.prepend(imageElement);
 
   // Adicionando o novo elemento dentro do items

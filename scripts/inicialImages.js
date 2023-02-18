@@ -1,12 +1,12 @@
 const inicialPhotos = document.querySelector(".photos");
 const initialCards = [
   {
-    name: "Vale de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
-  },
-  {
     name: "Lago Louise",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+  },
+  {
+    name: "Vale de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
   },
   {
     name: "Montanhas Carecas",
@@ -26,11 +26,10 @@ const initialCards = [
   },
 ];
 
-// function inicialImages() {
-//   initialCards.forEach(function (item) {
-//     console.log(item.name);
-//     console.log(item.link);
-//   });
-// }
+function inicialImages() {
+  initialCards.forEach(function (item) {
+    addNewCard(item.link, item.name);
+  });
+}
 
-// inicialImages();
+inicialImages();

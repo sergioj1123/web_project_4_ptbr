@@ -7,10 +7,17 @@ const titleImage = document.querySelector(".popup__form_text_title");
 const linkImage = document.querySelector(".popup__form_text_link");
 const photos = document.querySelector(".photos");
 const popupForm = popupImage.querySelector(".popup__formAdd");
+const imageZoom = document.querySelector(".popup-img");
+const closeButtonZoon = imageZoom.querySelector(".popup__close");
 
 // Função para deixar a tela visivel
 function toogleForm() {
   popupImage.classList.toggle("popup_visible");
+}
+
+// Deixa a tela do zoom da imagem visivel
+function toogleFormImageZoom() {
+  imageZoom.classList.toggle("popup-img_visible");
 }
 
 // Função para add novo cartão
@@ -24,7 +31,7 @@ function addNewCard(link, title) {
   imageElement.querySelector(".photo__name").textContent = title;
   photos.prepend(imageElement);
 
-  // Adicionando o novo elemento dentro do items
+  // Adicionando o butão do like
   imageElement
     .querySelector(".photo__likeButton_item")
     .addEventListener("click", function (event) {
@@ -34,6 +41,16 @@ function addNewCard(link, title) {
       } else {
         event.target.src = "./images/like_button_black.svg";
       }
+    });
+
+  //adicionando a função do popup da imagem
+  imageElement
+    .querySelector(".photo__img")
+    .addEventListener("click", function (event) {
+      toogleFormImageZoom();
+      imageZoom.querySelector(".popup-img__imagem").src = event.target.src;
+      imageZoom.querySelector(".popup-img__title").textContent =
+        event.target.alt;
     });
 
   // Adicionando a função de delete para o novo item;
@@ -54,3 +71,4 @@ function saveButton(event) {
 popupForm.addEventListener("submit", saveButton);
 openButtonImage.addEventListener("click", toogleForm);
 popupCloseButtonImage.addEventListener("click", toogleForm);
+closeButtonZoon.addEventListener("click", toogleFormImageZoom);

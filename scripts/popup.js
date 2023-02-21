@@ -12,15 +12,16 @@ const profileName = document.querySelector(".profile__name");
 const profileProfession = document.querySelector(".profile__profession");
 
 // Função para deixar a tela visivel
-function toogleForm() {
-  popupScreen.classList.toggle("popup_visible");
-  popupScreen.classList.remove("popup_closing-animation");
+function abrirTela(scren, classVisibleName) {
+  scren.classList.toggle(classVisibleName);
+  scren.classList.remove("popup_closing-animation");
 }
 
-function toogleFormClose() {
-  popupScreen.classList.toggle("popup_closing-animation");
+// Função para fechar a tela
+function fecharTela(scren, classVisibleName) {
+  scren.classList.toggle("popup_closing-animation");
   setTimeout(() => {
-    popupScreen.classList.remove("popup_visible");
+    scren.classList.remove(classVisibleName);
   }, 700);
 }
 
@@ -37,11 +38,20 @@ function saveButton(evt) {
   profileName.textContent = popupName.value;
   profileProfession.textContent = popupProfession.value;
   //   Também chamei a função de fechar a tela para que já feche quando clicar no salvar.
-  popupScreen.classList.remove("popup_visible");
+  buttonFecharTela();
 }
 
-openPopupButton.addEventListener("click", toogleForm);
+// Função que chama abrir tela de edição
+function buttonAbrirTela() {
+  abrirTela(popupScreen, "popup_visible");
+}
+// Função que chama fechar tela edição
+function buttonFecharTela() {
+  fecharTela(popupScreen, "popup_visible");
+}
+
+openPopupButton.addEventListener("click", buttonAbrirTela);
 openPopupButton.addEventListener("click", openWhithName);
-popupCloseButton.addEventListener("click", toogleFormClose);
+popupCloseButton.addEventListener("click", buttonFecharTela);
 popupSaveButton.addEventListener("click", saveButton);
 popupSaveButton.addEventListener("submit", saveButton);

@@ -10,34 +10,6 @@ const popupForm = popupImage.querySelector(".popup__formAdd");
 const imageZoom = document.querySelector(".popup-img");
 const closeButtonZoon = imageZoom.querySelector(".popup__close");
 
-// Função para deixar a tela visivel
-function toogleForm() {
-  popupImage.classList.toggle("popup_visible");
-  popupImage.classList.remove("popup_closing-animation");
-}
-
-// Função para remover tela
-function toogleFormClose() {
-  popupImage.classList.toggle("popup_closing-animation");
-  setTimeout(() => {
-    popupImage.classList.remove("popup_visible");
-  }, 700);
-}
-
-// Deixa a tela do zoom da imagem visivel
-function toogleFormImageZoom() {
-  imageZoom.classList.toggle("popup-img_visible");
-  imageZoom.classList.remove("popup_closing-animation");
-}
-
-// Remover zoom da imagem
-function imageZoomClose() {
-  imageZoom.classList.toggle("popup_closing-animation");
-  setTimeout(() => {
-    imageZoom.classList.remove("popup-img_visible");
-  }, 700);
-}
-
 // Função para add novo cartão
 function addNewCard(link, title) {
   const imageTemplate = document.querySelector("#photos").content;
@@ -49,7 +21,7 @@ function addNewCard(link, title) {
   imageElement.querySelector(".photo__name").textContent = title;
   photos.prepend(imageElement);
 
-  // Adicionando o butão do like
+  // Adicionando o botão do like
   imageElement
     .querySelector(".photo__likeButton_item")
     .addEventListener("click", function (event) {
@@ -61,11 +33,11 @@ function addNewCard(link, title) {
       }
     });
 
-  //adicionando a função do popup da imagem
+  //adicionando a função do zoom da imagem
   imageElement
     .querySelector(".photo__img")
     .addEventListener("click", function (event) {
-      toogleFormImageZoom();
+      buttonAbrirTelaZoom();
       imageZoom.querySelector(".popup-img__imagem").src = event.target.src;
       imageZoom.querySelector(".popup-img__title").textContent =
         event.target.alt;
@@ -79,14 +51,33 @@ function addNewCard(link, title) {
     });
 }
 
-// Função que chama addcard, quando cluca no botão de salvar.
+// Iniciando as chamadas de funções
+// Função que chama addcard, quando clica no botão de salvar.
 function saveButton(event) {
   event.preventDefault();
   addNewCard(linkImage.value, titleImage.value);
-  toogleForm();
+  buttonFecharTelaAdd();
+}
+
+// Função que chama abrir tela de adição de imagem
+function buttonAbrirTelaAdd() {
+  abrirTela(popupImage, "popup_visible");
+}
+// Função que chama fechar tela de adiação de imagem
+function buttonFecharTelaAdd() {
+  fecharTela(popupImage, "popup_visible");
+}
+
+// Função que chama abrir tela do zoom da imagem
+function buttonAbrirTelaZoom() {
+  abrirTela(imageZoom, "popup-img_visible");
+}
+// Função que chama fechar tela do zoom da imagem
+function buttonFecharTelaZoom() {
+  fecharTela(imageZoom, "popup-img_visible");
 }
 
 popupForm.addEventListener("submit", saveButton);
-openButtonImage.addEventListener("click", toogleForm);
-popupCloseButtonImage.addEventListener("click", toogleFormClose);
-closeButtonZoon.addEventListener("click", imageZoomClose);
+openButtonImage.addEventListener("click", buttonAbrirTelaAdd);
+popupCloseButtonImage.addEventListener("click", buttonFecharTelaAdd);
+closeButtonZoon.addEventListener("click", buttonFecharTelaZoom);

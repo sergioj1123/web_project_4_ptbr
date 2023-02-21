@@ -1,12 +1,10 @@
 // Importando elementos da tela de popup
 const openPopupButton = document.querySelector(".profile__edit");
-const popupScreen = document.querySelector(".popup__edit");
+const popupScreen = document.querySelector(".popup_edit");
 const popupCloseButton = popupScreen.querySelector(".popup__close");
-const popupSaveButton = popupScreen.querySelector(".popup__form_button");
-const popupName = popupScreen.querySelector(".popup__form_text_name");
-const popupProfession = popupScreen.querySelector(
-  ".popup__form_text_ocupation "
-);
+const popupSaveButton = popupScreen.querySelector(".popup__button");
+const popupName = popupScreen.querySelector(".popup__text_name");
+const popupProfession = popupScreen.querySelector(".popup__text_ocupation");
 // Importando elementos da tela de profile
 const profileName = document.querySelector(".profile__name");
 const profileProfession = document.querySelector(".profile__profession");

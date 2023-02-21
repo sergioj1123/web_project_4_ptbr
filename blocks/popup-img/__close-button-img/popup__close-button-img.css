@@ -1,0 +1,24 @@
+.popup__close-button-img {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  max-width: 40px;
+  max-height: 40px;
+  width: 100%;
+  border: none;
+  padding: 0;
+  background-color: #000000;
+}
+
+.popup__close-button-img:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__close-button-img {
+    right: 0px;
+    max-width: 26px;
+    max-height: 26px;
+  }
+}

@@ -32,18 +32,19 @@
 @import url(../blocks/footer/__copy/footer__copy.css);
 
 /* importando popup */
-@import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/_closing-animation/popup_closing-animation.css);
-@import url(../blocks/popup-animation/popup-animation.css);
-@import url(../blocks/popup/_visible/popup_visible.css);
-@import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__close/popup__close.css);
-@import url(../blocks/popup/__close/_item-img/popup__close_item-img.css);
+@import url(../blocks/popup/__close-img/popup__close-img.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__button/popup__button.css);
+@import url(../blocks/popup/__form-button/popup__form-button.css);
 @import url(../blocks/popup/__form/popup__form.css);
-@import url(../blocks/popup/__form/_text/popup__form_text.css);
-@import url(../blocks/popup/__form/_button/popup__form_button.css);
-@import url(../blocks/popup/__form/_button-text/popup__form_button-text.css);
+@import url(../blocks/popup/__text/popup__text.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/_visible/popup_visible.css);
+
+/* Importando animação de abrir e fechar popups */
+@import url(../blocks/popup-animation/popup-animation.css);
 
 /* importanto popup-img */
 @import url(../blocks/popup-img/popup-img.css);
@@ -52,3 +53,4 @@
 @import url(../blocks/popup-img/__imagem/popup-img__imagem.css);
 @import url(../blocks/popup-img/__title/popup-img__title.css);
 @import url(../blocks/popup-img/__main/popup-img__main.css);
+@import url(../blocks/popup-img/__close-button-img/popup__close-button-img.css);

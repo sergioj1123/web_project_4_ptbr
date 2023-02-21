@@ -1,14 +1,14 @@
 // Importando elementos da tela de popup
 const openButtonImage = document.querySelector(".profile__add");
-const popupImage = document.querySelector(".popup__newPlace");
+const popupImage = document.querySelector(".popup-newPlace");
 const popupCloseButtonImage = popupImage.querySelector(".popup__close");
-const popupSaveButtonImage = popupImage.querySelector(".popup__form_button");
-const titleImage = document.querySelector(".popup__form_text_title");
-const linkImage = document.querySelector(".popup__form_text_link");
+const popupSaveButtonImage = popupImage.querySelector(".popup__button");
+const titleImage = document.querySelector(".popup__text_title");
+const linkImage = document.querySelector(".popup__text_link");
 const photos = document.querySelector(".photos");
 const popupForm = popupImage.querySelector(".popup__formAdd");
 const imageZoom = document.querySelector(".popup-img");
-const closeButtonZoon = imageZoom.querySelector(".popup__close");
+const closeButtonZoon = imageZoom.querySelector(".popup__close-button-img");
 
 // Função para add novo cartão
 function addNewCard(link, title) {

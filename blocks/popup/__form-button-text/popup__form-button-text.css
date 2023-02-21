@@ -1,4 +1,4 @@
-.popup__form_button-text {
+.popup__form-button-text {
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .popup__form_button-text {
+  .popup__form-button-text {
     font-size: 14px;
     line-height: 17px;
   }

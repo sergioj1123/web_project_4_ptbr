@@ -8,7 +8,7 @@ const linkImage = document.querySelector(".popup__text_link");
 const photos = document.querySelector(".photos");
 const popupForm = popupImage.querySelector(".popup__formAdd");
 const imageZoom = document.querySelector(".popup-img");
-const closeButtonZoon = imageZoom.querySelector(".popup__close-button-img");
+const closeButtonZoon = imageZoom.querySelector(".popup-img__close-button-img");
 
 // Função para add novo cartão
 function addNewCard(link, title) {

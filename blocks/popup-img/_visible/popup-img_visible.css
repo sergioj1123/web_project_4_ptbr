@@ -1,3 +1,8 @@
 .popup-img_visible {
   display: flex;
+  animation: popupOpen 0.8s;
+}
+
+.popup_closing-animation {
+  animation: popupClose 0.8s;
 }

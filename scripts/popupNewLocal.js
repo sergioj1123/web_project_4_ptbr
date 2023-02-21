@@ -13,11 +13,29 @@ const closeButtonZoon = imageZoom.querySelector(".popup__close");
 // Função para deixar a tela visivel
 function toogleForm() {
   popupImage.classList.toggle("popup_visible");
+  popupImage.classList.remove("popup_closing-animation");
+}
+
+// Função para remover tela
+function toogleFormClose() {
+  popupImage.classList.toggle("popup_closing-animation");
+  setTimeout(() => {
+    popupImage.classList.remove("popup_visible");
+  }, 700);
 }
 
 // Deixa a tela do zoom da imagem visivel
 function toogleFormImageZoom() {
   imageZoom.classList.toggle("popup-img_visible");
+  imageZoom.classList.remove("popup_closing-animation");
+}
+
+// Remover zoom da imagem
+function imageZoomClose() {
+  imageZoom.classList.toggle("popup_closing-animation");
+  setTimeout(() => {
+    imageZoom.classList.remove("popup-img_visible");
+  }, 700);
 }
 
 // Função para add novo cartão
@@ -70,5 +88,5 @@ function saveButton(event) {
 
 popupForm.addEventListener("submit", saveButton);
 openButtonImage.addEventListener("click", toogleForm);
-popupCloseButtonImage.addEventListener("click", toogleForm);
-closeButtonZoon.addEventListener("click", toogleFormImageZoom);
+popupCloseButtonImage.addEventListener("click", toogleFormClose);
+closeButtonZoon.addEventListener("click", imageZoomClose);

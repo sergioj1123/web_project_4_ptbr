@@ -14,6 +14,14 @@ const profileProfession = document.querySelector(".profile__profession");
 // Função para deixar a tela visivel
 function toogleForm() {
   popupScreen.classList.toggle("popup_visible");
+  popupScreen.classList.remove("popup_closing-animation");
+}
+
+function toogleFormClose() {
+  popupScreen.classList.toggle("popup_closing-animation");
+  setTimeout(() => {
+    popupScreen.classList.remove("popup_visible");
+  }, 700);
 }
 
 // Função para a screen já abrir com o nome e ocupação
@@ -34,6 +42,6 @@ function saveButton(evt) {
 
 openPopupButton.addEventListener("click", toogleForm);
 openPopupButton.addEventListener("click", openWhithName);
-popupCloseButton.addEventListener("click", toogleForm);
+popupCloseButton.addEventListener("click", toogleFormClose);
 popupSaveButton.addEventListener("click", saveButton);
 popupSaveButton.addEventListener("submit", saveButton);

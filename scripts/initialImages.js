@@ -1,4 +1,5 @@
 const inicialPhotos = document.querySelector(".photos");
+import { addNewCard } from "./popupNewLocal.js";
 const initialCards = [
   {
     name: "Lago Louise",
@@ -26,10 +27,10 @@ const initialCards = [
   },
 ];
 
-function inicialImages() {
+function initialImages() {
   initialCards.forEach(function (item) {
     addNewCard(item.link, item.name);
   });
 }
 
-inicialImages();
+initialImages();

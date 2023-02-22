@@ -11,7 +11,7 @@ const imageZoom = document.querySelector(".popup-img");
 const closeButtonZoon = imageZoom.querySelector(".popup-img__close-button-img");
 
 // Função para add novo cartão
-function addNewCard(link, title) {
+export function addNewCard(link, title) {
   const imageTemplate = document.querySelector("#photos").content;
   const imageElement = imageTemplate
     .querySelector(".photos__item")
@@ -37,7 +37,7 @@ function addNewCard(link, title) {
   imageElement
     .querySelector(".photo__img")
     .addEventListener("click", function (event) {
-      buttonAbrirTelaZoom();
+      openScreenZoomButton();
       imageZoom.querySelector(".popup-img__imagem").src = event.target.src;
       imageZoom.querySelector(".popup-img__title").textContent =
         event.target.alt;
@@ -56,28 +56,28 @@ function addNewCard(link, title) {
 function saveButton(event) {
   event.preventDefault();
   addNewCard(linkImage.value, titleImage.value);
-  buttonFecharTelaAdd();
+  closeScreenAddButton();
 }
 
 // Função que chama abrir tela de adição de imagem
-function buttonAbrirTelaAdd() {
-  abrirTela(popupImage, "popup_visible");
+function openScreenAddButton() {
+  openScreen(popupImage, "popup_visible");
 }
 // Função que chama fechar tela de adiação de imagem
-function buttonFecharTelaAdd() {
-  fecharTela(popupImage, "popup_visible");
+function closeScreenAddButton() {
+  closeScreen(popupImage, "popup_visible");
 }
 
 // Função que chama abrir tela do zoom da imagem
-function buttonAbrirTelaZoom() {
-  abrirTela(imageZoom, "popup-img_visible");
+function openScreenZoomButton() {
+  openScreen(imageZoom, "popup-img_visible");
 }
 // Função que chama fechar tela do zoom da imagem
-function buttonFecharTelaZoom() {
-  fecharTela(imageZoom, "popup-img_visible");
+function closeScreenZoomButton() {
+  closeScreen(imageZoom, "popup-img_visible");
 }
 
 popupForm.addEventListener("submit", saveButton);
-openButtonImage.addEventListener("click", buttonAbrirTelaAdd);
-popupCloseButtonImage.addEventListener("click", buttonFecharTelaAdd);
-closeButtonZoon.addEventListener("click", buttonFecharTelaZoom);
+openButtonImage.addEventListener("click", openScreenAddButton);
+popupCloseButtonImage.addEventListener("click", closeScreenAddButton);
+closeButtonZoon.addEventListener("click", closeScreenZoomButton);

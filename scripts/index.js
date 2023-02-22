@@ -10,21 +10,21 @@ const profileName = document.querySelector(".profile__name");
 const profileProfession = document.querySelector(".profile__profession");
 
 // Função para deixar a tela visivel
-function abrirTela(scren, classVisibleName) {
-  scren.classList.toggle(classVisibleName);
-  scren.classList.remove("popup_closing-animation");
+function openScreen(screen, classVisibleName) {
+  screen.classList.toggle(classVisibleName);
+  screen.classList.remove("popup_closing-animation");
 }
 
 // Função para fechar a tela
-function fecharTela(scren, classVisibleName) {
-  scren.classList.toggle("popup_closing-animation");
+function closeScreen(screen, classVisibleName) {
+  screen.classList.toggle("popup_closing-animation");
   setTimeout(() => {
-    scren.classList.remove(classVisibleName);
+    screen.classList.remove(classVisibleName);
   }, 700);
 }
 
 // Função para a screen já abrir com o nome e ocupação
-function openWhithName(evt) {
+function openWithName(evt) {
   evt.preventDefault();
   popupName.value = profileName.textContent;
   popupProfession.value = profileProfession.textContent;
@@ -36,20 +36,20 @@ function saveButton(evt) {
   profileName.textContent = popupName.value;
   profileProfession.textContent = popupProfession.value;
   //   Também chamei a função de fechar a tela para que já feche quando clicar no salvar.
-  buttonFecharTela();
+  closeScreenButton();
 }
 
 // Função que chama abrir tela de edição
-function buttonAbrirTela() {
-  abrirTela(popupScreen, "popup_visible");
+function openScreenButton() {
+  openScreen(popupScreen, "popup_visible");
 }
 // Função que chama fechar tela edição
-function buttonFecharTela() {
-  fecharTela(popupScreen, "popup_visible");
+function closeScreenButton() {
+  closeScreen(popupScreen, "popup_visible");
 }
 
-openPopupButton.addEventListener("click", buttonAbrirTela);
-openPopupButton.addEventListener("click", openWhithName);
-popupCloseButton.addEventListener("click", buttonFecharTela);
+openPopupButton.addEventListener("click", openScreenButton);
+openPopupButton.addEventListener("click", openWithName);
+popupCloseButton.addEventListener("click", closeScreenButton);
 popupSaveButton.addEventListener("click", saveButton);
 popupSaveButton.addEventListener("submit", saveButton);

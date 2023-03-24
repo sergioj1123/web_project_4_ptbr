@@ -9,6 +9,7 @@ const photos = document.querySelector(".photos");
 const popupForm = popupImage.querySelector(".popup__formAdd");
 const imageZoom = document.querySelector(".popup-img");
 const closeButtonZoon = imageZoom.querySelector(".popup-img__close-button-img");
+import { closeClickingOutSide, openScreen, closeScreen } from "./index.js";
 
 // Função para add novo cartão
 export function addNewCard(link, title) {
@@ -62,18 +63,20 @@ function saveButton(event) {
 // Função que chama abrir tela de adição de imagem
 function openScreenAddButton() {
   openScreen(popupImage, "popup_visible");
+  closeClickingOutSide(popupImage);
 }
 // Função que chama fechar tela de adiação de imagem
-function closeScreenAddButton() {
+export function closeScreenAddButton() {
   closeScreen(popupImage, "popup_visible");
 }
 
 // Função que chama abrir tela do zoom da imagem
 function openScreenZoomButton() {
   openScreen(imageZoom, "popup-img_visible");
+  closeClickingOutSide(imageZoom);
 }
 // Função que chama fechar tela do zoom da imagem
-function closeScreenZoomButton() {
+export function closeScreenZoomButton() {
   closeScreen(imageZoom, "popup-img_visible");
 }
 

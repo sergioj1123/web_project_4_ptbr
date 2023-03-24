@@ -29,19 +29,33 @@
                 class="popup__close-img"
               />
             </button>
-            <form class="popup__form" name="edit">
-              <input
-                type="text"
-                name="edit-name"
-                placeholder="Nome"
-                class="popup__text popup__text_name text"
-              />
-              <input
-                type="text"
-                name="edit-ocupation"
-                placeholder="Ocupação"
-                class="popup__text popup__text_ocupation text"
-              />
+            <form class="popup__form" name="edit" novalidate>
+              <div class="popup__input-container">
+                <input
+                  type="text"
+                  name="edit-name"
+                  placeholder="Nome"
+                  class="popup__text popup__text_name text oi"
+                  id="name-input"
+                  minlength="7"
+                  maxlength="40"
+                  required
+                />
+                <span class="name-input-error popup__input-error"></span>
+              </div>
+              <div class="popup__input-container">
+                <input
+                  type="text"
+                  name="edit-ocupation"
+                  placeholder="Ocupação"
+                  class="popup__text popup__text_ocupation text oi"
+                  id="ocupation-input"
+                  minlength="2"
+                  maxlength="200"
+                  required
+                />
+                <span class="ocupation-input-error popup__input-error"></span>
+              </div>
               <button type="submit" class="popup__button">
                 <span class="popup__form-button-text text">Salvar</span>
               </button>
@@ -76,20 +90,30 @@
               />
             </button>
             <form class="popup__form popup__formAdd" name="edit">
-              <input
-                type="text"
-                name="edit-name"
-                placeholder="Título"
-                required
-                class="popup__text popup__text_title text"
-              />
-              <input
-                type="text"
-                name="edit-ocupation"
-                required
-                placeholder="Link de imagem"
-                class="popup__text popup__text_link text"
-              />
+              <div class="popup__input-container">
+                <input
+                  type="text"
+                  name="edit-name"
+                  placeholder="Título"
+                  minlength="2"
+                  maxlength="30"
+                  id="title-input"
+                  required
+                  class="popup__text popup__text_title text"
+                />
+                <span class="title-input-error popup__input-error"></span>
+              </div>
+              <div class="popup__input-container">
+                <input
+                  type="url"
+                  name="edit-ocupation"
+                  required
+                  id="url-input"
+                  placeholder="Link de imagem"
+                  class="popup__text popup__text_link text"
+                />
+                <span class="url-input-error popup__input-error"></span>
+              </div>
               <button type="submit" class="popup__button">
                 <span class="popup__button-text text">Criar</span>
               </button>
@@ -159,5 +183,6 @@
     <script src="./scripts/index.js"></script>
     <script type="module" src="./scripts/popupNewLocal.js"></script>
     <script type="module" src="./scripts/initialImages.js"></script>
+    <script type="module" src="./scripts/validate.js"></script>
   </body>
 </html>

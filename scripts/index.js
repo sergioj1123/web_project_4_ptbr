@@ -8,10 +8,44 @@ const popupProfession = popupScreen.querySelector(".popup__text_ocupation");
 // Importando elementos da tela de profile
 const profileName = document.querySelector(".profile__name");
 const profileProfession = document.querySelector(".profile__profession");
-import {
-  closeScreenZoomButton,
-  closeScreenAddButton,
-} from "./popupNewLocal.js";
+import { closeScreenZoomButton, closeScreenAddButton } from "./util.js";
+import { Card } from "./card.js";
+import { FormValidator } from "./formValidator.js";
+
+const initialCards = [
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+  },
+  {
+    name: "Vale de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+  },
+  {
+    name: "Montanhas Carecas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
+  },
+  {
+    name: "Parque Nacional da Vanoise ",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+  },
+];
+
+const objetctValidation = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__text",
+  submitButtonSelector: ".popup__button",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "form__input-error_active",
+};
 
 // Função para deixar a tela visivel
 export function openScreen(screen, classVisibleName) {
@@ -84,6 +118,31 @@ function closePopupEsc() {
 }
 
 closePopupEsc();
+
+// Criando cards iniciais
+initialCards.forEach((item) => {
+  const card = new Card(item, "#photos");
+  const cardElement = card.generateCard();
+
+  // Adiciona ao DOM
+  document.querySelector(".photos").append(cardElement);
+});
+
+// Chamando a validação dos formularios
+const startFormValidation = (objetctValidation) => {
+  const formList = Array.from(
+    document.querySelectorAll(objetctValidation.formSelector)
+  );
+  formList.forEach((formElement) => {
+    formElement.addEventListener("submit", function (evt) {
+      evt.preventDefault();
+    });
+    const validateForm = new FormValidator(objetctValidation, formElement);
+    validateForm.enableValidation();
+  });
+};
+
+startFormValidation(objetctValidation);
 
 openPopupButton.addEventListener("click", openScreenButton);
 openPopupButton.addEventListener("click", openWithName);
